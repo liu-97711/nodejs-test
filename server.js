@@ -27,7 +27,7 @@ var server = http.createServer(function(request, response){
     response.write(`
     <!DOCTYPE html>
     <head>
-    <link rel="stylesheet" href="/x">
+    <link rel="stylesheet" href="./style.css">
     <script src="/y"></script>
     </head>
     <body>
@@ -36,10 +36,10 @@ var server = http.createServer(function(request, response){
     </body>
     `);
     response.end();
-  }else if(path === '/x'){
+  }else if(path === '/style.css'){
     response.statusCode = 200;
     response.setHeader('Content-Type','text/css;charset=utf-8');
-    response.write(`body{color:red;} h2{color:yellow;}`);
+    response.write(`h1{color:red;} h2{color:green;}`);
     response.end();
   }else if(path === '/y'){
     response.statusCode = 200;
