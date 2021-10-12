@@ -32,13 +32,14 @@ var server = http.createServer(function(request, response){
     </head>
     <body>
     <h1>这是从服务端请求到的HTML代码</h1>
+    <h2>为了验证重启服务所以修改了代码</h2>
     </body>
     `);
     response.end();
   }else if(path === '/x'){
     response.statusCode = 200;
     response.setHeader('Content-Type','text/css;charset=utf-8');
-    response.write(`body{color:red;}`);
+    response.write(`body{color:red;} h2{color:yellow;}`);
     response.end();
   }else if(path === '/y'){
     response.statusCode = 200;
